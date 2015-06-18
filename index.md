@@ -36,3 +36,9 @@ interact with an adjacent layer.
 
 In the Internet model each layer only needs to understand itself and how to
 interface with the next lower layer.
+
+--
+
+### Layer Model: Diagram
+
+![Layer Model](450px-IP_stack_connections.png)

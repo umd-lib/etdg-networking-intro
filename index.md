@@ -74,16 +74,11 @@ https://en.wikipedia.org/wiki/Internet_protocol_suite#Link_layer
 
 ### Link Layer: Examples
 
-Not quite right, How to remove the host and leave the interface?
+Physical media: Ethernet, WiFi, 4G, Phone Line
 
-- LaptopWireless &larr; <em>WiFi</em> &rarr; Wireless Access Point
-- Desktop &larr; <em>Ethernet</em> &rarr; Router
-- Phone &larr; <em>4G</em> &rarr; Cell Tower
-- Modem &larr; <em>Phone Line</em> &rarr; Modem
+Link: Network Interface Controller (NIC), Modem, Phone/Cell Antenna?
 
 Media Access Control (MAC) Address
-
-Network Interface Controller (NIC)
 
 
 

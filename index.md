@@ -41,4 +41,49 @@ interface with the next lower layer.
 
 ### Layer Model: Diagram
 
-![Layer Model](450px-IP_stack_connections.png)
+<table>
+  <tr>
+    <td>![Layer Model](450px-IP_stack_connections.png)</td>
+    <td>
+      [IP stack connections](http://commons.wikimedia.org/wiki/File:IP_stack_connections.svg)
+      <br/>
+      [CC BY-SA 3.0](http://creativecommons.org/licenses/by-sa/3.0/)
+    </td>
+  </tr>
+</table>
+
+--
+
+### Link Layer
+
+Link Layer
+
+The link layer is used to move packets between the Internet layer
+interfaces of two different hosts on the same link.  This layer may be
+implemented on top of virtually any hardware networking technology.
+
+https://en.wikipedia.org/wiki/Internet_protocol_suite#Link_layer
+
+--
+
+### Link Layer: Diagram
+
+![Link Layer](LinkLayer.png)</td>
+
+--
+
+### Link Layer: Examples
+
+Not quite right, How to remove the host and leave the interface?
+
+- LaptopWireless &larr; <em>WiFi</em> &rarr; Wireless Access Point
+- Desktop &larr; <em>Ethernet</em> &rarr; Router
+- Phone &larr; <em>4G</em> &rarr; Cell Tower
+- Modem &larr; <em>Phone Line</em> &rarr; Modem
+
+Media Access Control (MAC) Address
+
+Network Interface Controller (NIC)
+
+
+

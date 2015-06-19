@@ -418,14 +418,6 @@ model used for The Internet, known as the Internet protocol suite.</p>
 <p>A common way to build and understand complex computer systems is to create layers,
 with each layer only needing to know its own implementation and how to
 interact with an adjacent layer.</p>
-<ul>
-<li>Application layer</li>
-<li>Transport layer</li>
-<li>Internet layer</li>
-<li>Link layer</li>
-</ul>
-<p>In the Internet model each layer only needs to understand itself and how to
-interface with the next lower layer.</p>
 </section>
   </div>
   <div class="slide hidden" id="slide-4">
@@ -442,6 +434,18 @@ interface with the next lower layer.</p>
 </table></section>
   </div>
   <div class="slide hidden" id="slide-5">
+    <section class="slide-content"><h3 id="layer-model-levels">Layer Model: Levels</h3>
+<ul>
+<li>Application layer</li>
+<li>Transport layer</li>
+<li>Internet layer</li>
+<li>Link layer</li>
+</ul>
+<p>In the Internet model each layer only needs to understand itself and how to
+interface with the next lower layer.</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-6">
     <section class="slide-content"><h3 id="link-layer">Link Layer</h3>
 <p>Link Layer</p>
 <p>The link layer is used to move packets between the Internet layer
@@ -450,19 +454,118 @@ implemented on top of virtually any hardware networking technology.</p>
 <p><a href="https://en.wikipedia.org/wiki/Internet_protocol_suite#Link_layer">https://en.wikipedia.org/wiki/Internet_protocol_suite#Link_layer</a></p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-6">
-    <section class="slide-content"><h3 id="link-layer-diagram">Link Layer: Diagram</h3>
-<p><img src="LinkLayer.png" alt="Link Layer"></td></p>
-</section>
-  </div>
   <div class="slide hidden" id="slide-7">
-    <section class="slide-content"><h3 id="link-layer-examples">Link Layer: Examples</h3>
-<p>Physical media: Ethernet, WiFi, 4G, Phone Line</p>
-<p>Link: Network Interface Controller (NIC), Modem, Phone/Cell Antenna?</p>
-<p>Media Access Control (MAC) Address</p>
+    <section class="slide-content"><h3 id="link-layer-diagram">Link Layer: Diagram</h3>
+<p><img src="LinkLayer.png" alt="Link Layer"></p>
 </section>
   </div>
   <div class="slide hidden" id="slide-8">
+    <section class="slide-content"><h3 id="link-layer-examples">Link Layer: Examples</h3>
+<p>Physical media: Ethernet, WiFi, 4G, Phone Line</p>
+<p>Link: Network Interface Controller (NIC), Modem, Phone/Cell Antenna?</p>
+<p>Media Access Control (MAC) Address (e.g., <code>80:e6:50:25:0d:74</code>)</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-9">
+    <section class="slide-content"><h3 id="link-layer-exercise">Link Layer: Exercise</h3>
+<p>In this exercise, you will locate the MAC addresses for the WiFi NIC on your computer.</p>
+<ol>
+<li>Open a Terminal</li>
+<li>Type <code>ifconfig en0</code> at the prompt and press [Return]</li>
+</ol>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-10">
+    <section class="slide-content"><h3 id="internet-layer-diagram">Internet Layer: Diagram</h3>
+<p><img src="InternetLayer.png" alt="Internet Layer"></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-11">
+    <section class="slide-content"><h3 id="internet-layer">Internet Layer</h3>
+<p>The internet layer has the responsibility of sending packets across potentially multiple networks. Internetworking requires sending data from the source network to the destination network. This process is called routing.</p>
+<p><a href="https://en.wikipedia.org/wiki/Internet_protocol_suite#Internet_layer">https://en.wikipedia.org/wiki/Internet_protocol_suite#Internet_layer</a></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-12">
+    <section class="slide-content"><h3 id="internet-layer-routing">Internet Layer: Routing</h3>
+<p>Routers:</p>
+<ul>
+<li>Connect networks</li>
+<li>Packet for a computer on the local area network (LAN)? Deliver directly</li>
+<li>Packet for a remote computer? Send it to another router</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-13">
+    <section class="slide-content"><h3 id="internet-layer-examples">Internet Layer: Examples</h3>
+<ul>
+<li>Classless Inter-Domain Routing (CIDR)</li>
+<li>Routing</li>
+<li>Internet Protocol (IP)</li>
+<li>Network Address Translation (NAT)</li>
+<li>Local Area Network (LAN)</li>
+<li>Wide Area Network (WAN)</li>
+<li>Domain Name System (DNS)</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-14">
+    <section class="slide-content"><h3 id="internet-layer-exercise">Internet Layer: Exercise</h3>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-15">
+    <section class="slide-content"><h3 id="transport-layer-diagram">Transport Layer: Diagram</h3>
+<p><img src="TransportLayer.png" alt="Transport Layer"></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-16">
+    <section class="slide-content"><h3 id="transport-layer">Transport Layer</h3>
+<p>The transport layer establishes a basic data channel that an application uses in its task-specific data exchange. The layer establishes process-to-process connectivity, meaning it provides end-to-end services that are independent of the structure of user data and the logistics of exchanging information for any particular specific purpose. Its responsibility includes end-to-end message transfer independent of the underlying network, along with error control, segmentation, flow control, congestion control, and application addressing (port numbers). End-to-end message transmission or connecting applications at the transport layer can be categorized as either connection-oriented, implemented in TCP, or connectionless, implemented in UDP.</p>
+<p><a href="https://en.wikipedia.org/wiki/Internet_protocol_suite#Transport_layer">https://en.wikipedia.org/wiki/Internet_protocol_suite#Transport_layer</a></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-17">
+    <section class="slide-content"><h3 id="transport-layer-examples">Transport Layer: Examples</h3>
+<ul>
+<li>Transmission Control Protocol (TCP)</li>
+<li>User Datagram Protocol (UDP)</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-18">
+    <section class="slide-content"><h3 id="transport-layer-exercise">Transport Layer: Exercise</h3>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-19">
+    <section class="slide-content"><h3 id="application-layer-diagram">Application Layer: Diagram</h3>
+<p><img src="ApplicationLayer.png" alt="Application Layer"></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-20">
+    <section class="slide-content"><h3 id="application-layer">Application Layer</h3>
+<p>The application layer includes the protocols used by most applications for providing user services or exchanging application data over the network connections established by the lower level protocols, but this may include some basic network support services, such as many routing protocols, and host configuration protocols. Examples of application layer protocols include the Hypertext Transfer Protocol (HTTP), the File Transfer Protocol (FTP), the Simple Mail Transfer Protocol (SMTP), and the Dynamic Host Configuration Protocol (DHCP). Data coded according to application layer protocols are encapsulated into transport layer protocol units (such as TCP or UDP messages), which in turn use lower layer protocols to effect actual data transfer.</p>
+<p><a href="https://en.wikipedia.org/wiki/Internet_protocol_suite#Application_layer">https://en.wikipedia.org/wiki/Internet_protocol_suite#Application_layer</a></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-21">
+    <section class="slide-content"><h3 id="application-layer-examples">Application Layer: Examples</h3>
+<ul>
+<li>File Transmission Protocol (FTP)</li>
+<li>Hypertext Transfer Protocol (HTTP)</li>
+<li>HTTP Secure (HTTPS)</li>
+<li>Transport Layer Security (TLS)</li>
+<li>Secure Shell (SSH) protocol</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-22">
+    <section class="slide-content"><h3 id="application-layer-exercise">Application Layer : Exercise</h3>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-23">
+    <section class="slide-content"></section>
+  </div>
+  <div class="slide hidden" id="slide-24">
     <section class="slide-content"><div class="author">
   <h1 class="name">Ben Wallberg, Peter Eichman</h1>
     <h3 class="email">

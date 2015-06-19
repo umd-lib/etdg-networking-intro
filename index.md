@@ -59,11 +59,9 @@ interface with the next lower layer.
 
 --
 
-### Link Layer
+### Link Layer: Definition
 
-Link Layer
-
-The link layer is used to move packets between the Internet layer
+The **link layer** is used to move packets between the Internet layer
 interfaces of two different hosts on the same link.  This layer may be
 implemented on top of virtually any hardware networking technology.
 
@@ -103,9 +101,11 @@ In this exercise, you will locate the MAC addresses for the WiFi NIC on your com
 
 --
 
-### Internet Layer
+### Internet Layer: Definition
 
-The internet layer has the responsibility of sending packets across potentially multiple networks. Internetworking requires sending data from the source network to the destination network. This process is called routing.
+The **internet layer** is responsibile for sending packets across potentially
+multiple networks. Internetworking requires sending data from the source network
+to the destination network. This process is called routing.
 
 https://en.wikipedia.org/wiki/Internet_protocol_suite#Internet_layer
 
@@ -129,11 +129,12 @@ Routers:
 * Network Address Translation (NAT)
 * Local Area Network (LAN)
 * Wide Area Network (WAN)
-* Domain Name System (DNS)
 
 --
 
 ### Internet Layer: Exercise
+
+possible tools: tracert
 
 --
 
@@ -143,9 +144,13 @@ Routers:
 
 --
 
-### Transport Layer
+### Transport Layer: Definition
 
-The transport layer establishes a basic data channel that an application uses in its task-specific data exchange. The layer establishes process-to-process connectivity, meaning it provides end-to-end services that are independent of the structure of user data and the logistics of exchanging information for any particular specific purpose. Its responsibility includes end-to-end message transfer independent of the underlying network, along with error control, segmentation, flow control, congestion control, and application addressing (port numbers). End-to-end message transmission or connecting applications at the transport layer can be categorized as either connection-oriented, implemented in TCP, or connectionless, implemented in UDP.
+The **transport layer** establishes a basic data channel between processes. It
+provides end-to-end services that are independent of the underlying network
+(link and internet layers).  These services are also independent of the
+structure of user data and the logistics of exchanging information for any
+particular specific purpose (application layer).
 
 https://en.wikipedia.org/wiki/Internet_protocol_suite#Transport_layer
 
@@ -168,9 +173,13 @@ https://en.wikipedia.org/wiki/Internet_protocol_suite#Transport_layer
 
 --
 
-### Application Layer
+### Application Layer: Definition
 
-The application layer includes the protocols used by most applications for providing user services or exchanging application data over the network connections established by the lower level protocols, but this may include some basic network support services, such as many routing protocols, and host configuration protocols. Examples of application layer protocols include the Hypertext Transfer Protocol (HTTP), the File Transfer Protocol (FTP), the Simple Mail Transfer Protocol (SMTP), and the Dynamic Host Configuration Protocol (DHCP). Data coded according to application layer protocols are encapsulated into transport layer protocol units (such as TCP or UDP messages), which in turn use lower layer protocols to effect actual data transfer.
+The **application layer** includes the protocols for providing user services or
+exchanging data over the network connections established by the lower level
+protocols. Data coded according to application layer protocols is encapsulated
+into transport layer protocol units (such as TCP or UDP messages), which in turn
+use lower layer protocols to effect actual data transfer.
 
 https://en.wikipedia.org/wiki/Internet_protocol_suite#Application_layer
 
@@ -183,17 +192,9 @@ https://en.wikipedia.org/wiki/Internet_protocol_suite#Application_layer
 * HTTP Secure (HTTPS)
 * Transport Layer Security (TLS)
 * Secure Shell (SSH) protocol
+* Simple Mail Transfer Protocol (SMTP)
+* Domain Name System (DNS)
 
 --
 
-### Application Layer : Exercise
-
---
-
-
-
-
-
-
-
-
+### Application Layer: Exercise

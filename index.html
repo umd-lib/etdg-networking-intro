@@ -446,9 +446,8 @@ interface with the next lower layer.</p>
 </section>
   </div>
   <div class="slide hidden" id="slide-6">
-    <section class="slide-content"><h3 id="link-layer">Link Layer</h3>
-<p>Link Layer</p>
-<p>The link layer is used to move packets between the Internet layer
+    <section class="slide-content"><h3 id="link-layer-definition">Link Layer: Definition</h3>
+<p>The <strong>link layer</strong> is used to move packets between the Internet layer
 interfaces of two different hosts on the same link.  This layer may be
 implemented on top of virtually any hardware networking technology.</p>
 <p><a href="https://en.wikipedia.org/wiki/Internet_protocol_suite#Link_layer">https://en.wikipedia.org/wiki/Internet_protocol_suite#Link_layer</a></p>
@@ -481,8 +480,10 @@ implemented on top of virtually any hardware networking technology.</p>
 </section>
   </div>
   <div class="slide hidden" id="slide-11">
-    <section class="slide-content"><h3 id="internet-layer">Internet Layer</h3>
-<p>The internet layer has the responsibility of sending packets across potentially multiple networks. Internetworking requires sending data from the source network to the destination network. This process is called routing.</p>
+    <section class="slide-content"><h3 id="internet-layer-definition">Internet Layer: Definition</h3>
+<p>The <strong>internet layer</strong> is responsibile for sending packets across potentially
+multiple networks. Internetworking requires sending data from the source network
+to the destination network. This process is called routing.</p>
 <p><a href="https://en.wikipedia.org/wiki/Internet_protocol_suite#Internet_layer">https://en.wikipedia.org/wiki/Internet_protocol_suite#Internet_layer</a></p>
 </section>
   </div>
@@ -505,12 +506,12 @@ implemented on top of virtually any hardware networking technology.</p>
 <li>Network Address Translation (NAT)</li>
 <li>Local Area Network (LAN)</li>
 <li>Wide Area Network (WAN)</li>
-<li>Domain Name System (DNS)</li>
 </ul>
 </section>
   </div>
   <div class="slide hidden" id="slide-14">
     <section class="slide-content"><h3 id="internet-layer-exercise">Internet Layer: Exercise</h3>
+<p>possible tools: tracert</p>
 </section>
   </div>
   <div class="slide hidden" id="slide-15">
@@ -519,8 +520,12 @@ implemented on top of virtually any hardware networking technology.</p>
 </section>
   </div>
   <div class="slide hidden" id="slide-16">
-    <section class="slide-content"><h3 id="transport-layer">Transport Layer</h3>
-<p>The transport layer establishes a basic data channel that an application uses in its task-specific data exchange. The layer establishes process-to-process connectivity, meaning it provides end-to-end services that are independent of the structure of user data and the logistics of exchanging information for any particular specific purpose. Its responsibility includes end-to-end message transfer independent of the underlying network, along with error control, segmentation, flow control, congestion control, and application addressing (port numbers). End-to-end message transmission or connecting applications at the transport layer can be categorized as either connection-oriented, implemented in TCP, or connectionless, implemented in UDP.</p>
+    <section class="slide-content"><h3 id="transport-layer-definition">Transport Layer: Definition</h3>
+<p>The <strong>transport layer</strong> establishes a basic data channel between processes. It
+provides end-to-end services that are independent of the underlying network
+(link and internet layers).  These services are also independent of the
+structure of user data and the logistics of exchanging information for any
+particular specific purpose (application layer).</p>
 <p><a href="https://en.wikipedia.org/wiki/Internet_protocol_suite#Transport_layer">https://en.wikipedia.org/wiki/Internet_protocol_suite#Transport_layer</a></p>
 </section>
   </div>
@@ -542,8 +547,12 @@ implemented on top of virtually any hardware networking technology.</p>
 </section>
   </div>
   <div class="slide hidden" id="slide-20">
-    <section class="slide-content"><h3 id="application-layer">Application Layer</h3>
-<p>The application layer includes the protocols used by most applications for providing user services or exchanging application data over the network connections established by the lower level protocols, but this may include some basic network support services, such as many routing protocols, and host configuration protocols. Examples of application layer protocols include the Hypertext Transfer Protocol (HTTP), the File Transfer Protocol (FTP), the Simple Mail Transfer Protocol (SMTP), and the Dynamic Host Configuration Protocol (DHCP). Data coded according to application layer protocols are encapsulated into transport layer protocol units (such as TCP or UDP messages), which in turn use lower layer protocols to effect actual data transfer.</p>
+    <section class="slide-content"><h3 id="application-layer-definition">Application Layer: Definition</h3>
+<p>The <strong>application layer</strong> includes the protocols for providing user services or
+exchanging data over the network connections established by the lower level
+protocols. Data coded according to application layer protocols is encapsulated
+into transport layer protocol units (such as TCP or UDP messages), which in turn
+use lower layer protocols to effect actual data transfer.</p>
 <p><a href="https://en.wikipedia.org/wiki/Internet_protocol_suite#Application_layer">https://en.wikipedia.org/wiki/Internet_protocol_suite#Application_layer</a></p>
 </section>
   </div>
@@ -555,17 +564,16 @@ implemented on top of virtually any hardware networking technology.</p>
 <li>HTTP Secure (HTTPS)</li>
 <li>Transport Layer Security (TLS)</li>
 <li>Secure Shell (SSH) protocol</li>
+<li>Simple Mail Transfer Protocol (SMTP)</li>
+<li>Domain Name System (DNS)</li>
 </ul>
 </section>
   </div>
   <div class="slide hidden" id="slide-22">
-    <section class="slide-content"><h3 id="application-layer-exercise">Application Layer : Exercise</h3>
+    <section class="slide-content"><h3 id="application-layer-exercise">Application Layer: Exercise</h3>
 </section>
   </div>
   <div class="slide hidden" id="slide-23">
-    <section class="slide-content"></section>
-  </div>
-  <div class="slide hidden" id="slide-24">
     <section class="slide-content"><div class="author">
   <h1 class="name">Ben Wallberg, Peter Eichman</h1>
     <h3 class="email">

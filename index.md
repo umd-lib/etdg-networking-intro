@@ -59,6 +59,12 @@ interface with the next lower layer.
 
 --
 
+### Link Layer: Diagram
+
+![Link Layer](LinkLayer.png)
+
+--
+
 ### Link Layer: Definition
 
 The **link layer** is used to move packets between the Internet layer
@@ -67,11 +73,6 @@ implemented on top of virtually any hardware networking technology.
 
 https://en.wikipedia.org/wiki/Internet_protocol_suite#Link_layer
 
---
-
-### Link Layer: Diagram
-
-![Link Layer](LinkLayer.png)
 
 --
 

@@ -86,6 +86,18 @@ Media Access Control (MAC) Address (e.g., `80:e6:50:25:0d:74`)
 
 --
 
+### Link Layer: Ethernet Packet
+
+aka Ethernet Frame
+
+![](800px-Ethernet_Type_II_Frame_format.svg.png)
+
+[Ethernet Type II Frame format](https://commons.wikimedia.org/wiki/File:Ethernet_Type_II_Frame_format.svg)
+<br/>
+[Public Domain](https://en.wikipedia.org/wiki/en:public_domain)
+
+--
+
 ### Link Layer: Exercise
 
 In this exercise, you will locate the MAC addresses for the WiFi NIC on your computer.

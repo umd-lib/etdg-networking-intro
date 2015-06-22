@@ -711,6 +711,20 @@ Ctrl-D</code></pre>
   </div>
   <div class="slide hidden" id="slide-36">
     <section class="slide-content"><h3 id="application-layer-examples">Application Layer: Examples</h3>
+<p>HTTP Secure (HTTPS)</p>
+<p>HTTP communication within a connection encrypted by Transport Layer Security (TLS), et al. The main motivation for HTTPS is authentication of the visited website and to protect the privacy and integrity of the exchanged data.</p>
+<p><a href="https://en.wikipedia.org/wiki/HTTPS">https://en.wikipedia.org/wiki/HTTPS</a></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-37">
+    <section class="slide-content"><h3 id="application-layer-exercise">Application Layer: Exercise</h3>
+<p>Requesting <a href="https://mdsoar.org/">https://mdsoar.org/</a></p>
+<p>Open Wireshark, capture packets on en0, filter <code>ip.addr eq 129.2.19.141 and tcp.port eq 443</code></p>
+<p><code>curl https://mdsoar.org/</code></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-38">
+    <section class="slide-content"><h3 id="application-layer-examples">Application Layer: Examples</h3>
 <ul>
 <li>File Transmission Protocol (FTP)</li>
 <li>HTTP Secure (HTTPS)</li>
@@ -720,11 +734,7 @@ Ctrl-D</code></pre>
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-37">
-    <section class="slide-content"><h3 id="application-layer-exercise">Application Layer: Exercise</h3>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-38">
+  <div class="slide hidden" id="slide-39">
     <section class="slide-content"><div class="author">
   <h1 class="name">Ben Wallberg, Peter Eichman</h1>
     <h3 class="email">

@@ -373,6 +373,25 @@ Web development tools for inspection and debugging of web pages.
 * Firebug - Firefox plugin
 * Developer Tools - built-in to Chrome
 
+--
+
+### Application Layer: Examples
+
+HTTP Secure (HTTPS)
+
+HTTP communication within a connection encrypted by Transport Layer Security (TLS), et al. The main motivation for HTTPS is authentication of the visited website and to protect the privacy and integrity of the exchanged data.
+
+https://en.wikipedia.org/wiki/HTTPS
+
+--
+
+### Application Layer: Exercise
+
+Requesting https://mdsoar.org/
+
+Open Wireshark, capture packets on en0, filter `ip.addr eq 129.2.19.141 and tcp.port eq 443`
+
+`curl https://mdsoar.org/`
 
 --
 
@@ -383,7 +402,3 @@ Web development tools for inspection and debugging of web pages.
 * Transport Layer Security (TLS)
 * Secure Shell (SSH) protocol
 * Simple Mail Transfer Protocol (SMTP)
-
---
-
-### Application Layer: Exercise

@@ -397,8 +397,8 @@ Open Wireshark, capture packets on en0, filter `ip.addr eq 129.2.19.141 and tcp.
 
 ### Application Layer: Examples
 
+Addtional examples:
+
 * File Transmission Protocol (FTP)
-* HTTP Secure (HTTPS)
-* Transport Layer Security (TLS)
 * Secure Shell (SSH) protocol
 * Simple Mail Transfer Protocol (SMTP)

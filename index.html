@@ -637,9 +637,82 @@ use lower layer protocols to effect actual data transfer.</p>
   </div>
   <div class="slide hidden" id="slide-29">
     <section class="slide-content"><h3 id="application-layer-examples">Application Layer: Examples</h3>
+<p>Hypertext Transfer Protocol (HTTP)</p>
+<p>An application protocol for distributed, collaborative, hypermedia information systems; the foundation of data communication for the World Wide Web.</p>
+<p><a href="https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol">https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol</a></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-30">
+    <section class="slide-content"><h3 id="application-layer-examples">Application Layer: Examples</h3>
+<p>HTTP Client Request</p>
+<p>Requesting <a href="http://www.example.com/index.html">http://www.example.com/index.html</a></p>
+<pre><code>GET /index.html HTTP/1.1
+Host: www.example.com</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-31">
+    <section class="slide-content"><h3 id="application-layer-examples">Application Layer: Examples</h3>
+<p>HTTP Server Response:</p>
+<pre><code>HTTP/1.1 200 OK
+Date: Mon, 23 May 2005 22:38:34 GMT
+Server: Apache/1.3.3.7 (Unix) (Red-Hat/Linux)
+Last-Modified: Wed, 08 Jan 2003 23:11:55 GMT
+ETag: &quot;3f80f-1b6-3e1cb03b&quot;
+Content-Type: text/html; charset=UTF-8
+Content-Length: 138
+Accept-Ranges: bytes
+Connection: close
+
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;An Example Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  Hello World, this is a very simple HTML document.
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-32">
+    <section class="slide-content"><h3 id="application-layer-exercise">Application Layer: Exercise</h3>
+<p>Requesting <a href="http://lib.umd.edu/">http://lib.umd.edu/</a></p>
+<p>Open Wireshark, capture packets on en0, filter <code>ip.addr eq 129.2.19.172 and tcp.port eq 80</code></p>
+<pre><code>telnet lib.umd.edu
+GET / HTTP/1.0
+Host: lib.umd.edu
+
+Ctrl-D</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-33">
+    <section class="slide-content"><h3 id="application-layer-exercise">Application Layer: Exercise</h3>
+<p>Requesting <a href="http://www.lib.umd.edu/">http://www.lib.umd.edu/</a></p>
+<pre><code>telnet www.lib.umd.edu
+GET / HTTP/1.0
+Host: lib.umd.edu
+
+Ctrl-D</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-34">
+    <section class="slide-content"><h3 id="application-layer-exercise">Application Layer: Exercise</h3>
+<p><em>curl</em> is a command-line tool to transfer data from or to a server, using one of the supported protocols (HTTP, etc.).  The command is designed to work without user interaction.</p>
+<p><code>curl http://lib.umd.edu</code></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-35">
+    <section class="slide-content"><h3 id="application-layer-exercise">Application Layer: Exercise</h3>
+<p>Web development tools for inspection and debugging of web pages.</p>
+<ul>
+<li>Firebug - Firefox plugin</li>
+<li>Developer Tools - built-in to Chrome</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-36">
+    <section class="slide-content"><h3 id="application-layer-examples">Application Layer: Examples</h3>
 <ul>
 <li>File Transmission Protocol (FTP)</li>
-<li>Hypertext Transfer Protocol (HTTP)</li>
 <li>HTTP Secure (HTTPS)</li>
 <li>Transport Layer Security (TLS)</li>
 <li>Secure Shell (SSH) protocol</li>
@@ -647,11 +720,11 @@ use lower layer protocols to effect actual data transfer.</p>
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-30">
+  <div class="slide hidden" id="slide-37">
     <section class="slide-content"><h3 id="application-layer-exercise">Application Layer: Exercise</h3>
 </section>
   </div>
-  <div class="slide hidden" id="slide-31">
+  <div class="slide hidden" id="slide-38">
     <section class="slide-content"><div class="author">
   <h1 class="name">Ben Wallberg, Peter Eichman</h1>
     <h3 class="email">

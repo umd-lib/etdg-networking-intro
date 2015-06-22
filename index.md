@@ -280,8 +280,105 @@ Observe DNS communications.
 
 ### Application Layer: Examples
 
+Hypertext Transfer Protocol (HTTP)
+
+An application protocol for distributed, collaborative, hypermedia information systems; the foundation of data communication for the World Wide Web.
+
+https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol
+
+--
+
+### Application Layer: Examples
+
+HTTP Client Request
+
+Requesting http://www.example.com/index.html
+
+```
+GET /index.html HTTP/1.1
+Host: www.example.com
+```
+
+--
+
+### Application Layer: Examples
+
+HTTP Server Response:
+
+```
+HTTP/1.1 200 OK
+Date: Mon, 23 May 2005 22:38:34 GMT
+Server: Apache/1.3.3.7 (Unix) (Red-Hat/Linux)
+Last-Modified: Wed, 08 Jan 2003 23:11:55 GMT
+ETag: "3f80f-1b6-3e1cb03b"
+Content-Type: text/html; charset=UTF-8
+Content-Length: 138
+Accept-Ranges: bytes
+Connection: close
+ 
+<html>
+<head>
+  <title>An Example Page</title>
+</head>
+<body>
+  Hello World, this is a very simple HTML document.
+</body>
+</html>
+```
+
+--
+
+### Application Layer: Exercise
+
+Requesting http://lib.umd.edu/
+
+Open Wireshark, capture packets on en0, filter `ip.addr eq 129.2.19.172 and tcp.port eq 80`
+
+```
+telnet lib.umd.edu
+GET / HTTP/1.0
+Host: lib.umd.edu
+
+Ctrl-D
+```
+
+--
+
+### Application Layer: Exercise
+
+Requesting http://www.lib.umd.edu/
+
+```
+telnet www.lib.umd.edu
+GET / HTTP/1.0
+Host: lib.umd.edu
+
+Ctrl-D
+```
+
+--
+
+### Application Layer: Exercise
+
+*curl* is a command-line tool to transfer data from or to a server, using one of the supported protocols (HTTP, etc.).  The command is designed to work without user interaction.
+
+`curl http://lib.umd.edu`
+
+--
+
+### Application Layer: Exercise
+
+Web development tools for inspection and debugging of web pages.
+
+* Firebug - Firefox plugin
+* Developer Tools - built-in to Chrome
+
+
+--
+
+### Application Layer: Examples
+
 * File Transmission Protocol (FTP)
-* Hypertext Transfer Protocol (HTTP)
 * HTTP Secure (HTTPS)
 * Transport Layer Security (TLS)
 * Secure Shell (SSH) protocol

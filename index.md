@@ -260,13 +260,13 @@ https://en.wikipedia.org/wiki/Domain_Name_System
 
 --
 
-### Transport Layer: Examples
+### Application Layer: Examples
 
 ![DNS Configuration](DNS_Configuration.png)
 
 --
 
-### Transport Layer: Exercise
+### Application Layer: Exercise
 
 Observe DNS communications.
 

@@ -252,13 +252,40 @@ https://en.wikipedia.org/wiki/Internet_protocol_suite#Application_layer
 
 ### Application Layer: Examples
 
+Domain Name System (DNS)
+
+The Domain Name System is an essential component of the functionality of most Internet services because it is the Internet's primary directory service, translating domain names, which can be easily memorized by humans, to IP addresses.
+
+https://en.wikipedia.org/wiki/Domain_Name_System
+
+--
+
+### Transport Layer: Examples
+
+![DNS Configuration](DNS_Configuration.png)
+
+--
+
+### Transport Layer: Exercise
+
+Observe DNS communications.
+
+1. Open Wireshark, capture packets on en0, filter `dns`
+2. `nslookup lib.umd.edu`
+3. `nslookup www.lib.umd.edu`
+4. `nslookup oer.umd.edu`
+5. `nslookup google.com`
+
+--
+
+### Application Layer: Examples
+
 * File Transmission Protocol (FTP)
 * Hypertext Transfer Protocol (HTTP)
 * HTTP Secure (HTTPS)
 * Transport Layer Security (TLS)
 * Secure Shell (SSH) protocol
 * Simple Mail Transfer Protocol (SMTP)
-* Domain Name System (DNS)
 
 --
 

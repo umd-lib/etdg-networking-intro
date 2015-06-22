@@ -530,7 +530,7 @@ to the destination network. This process is called routing.</p>
   </div>
   <div class="slide hidden" id="slide-17">
     <section class="slide-content"><h3 id="transport-layer-definition">Transport Layer: Definition</h3>
-<p>The <strong>transport layer</strong> establishes a basic data channel between processes. It
+<p>The <strong>transport layer</strong> establishes a basic data channel between hosts. It
 provides end-to-end services that are independent of the underlying network
 (link and internet layers).  These services are also independent of the
 structure of user data and the logistics of exchanging information for any
@@ -541,21 +541,67 @@ particular specific purpose (application layer).</p>
   <div class="slide hidden" id="slide-18">
     <section class="slide-content"><h3 id="transport-layer-examples">Transport Layer: Examples</h3>
 <ul>
-<li>Transmission Control Protocol (TCP)</li>
 <li>User Datagram Protocol (UDP)</li>
+<li>Transmission Control Protocol (TCP)</li>
 </ul>
+<p>Both operate on top of the IP protocol.  Due to the prevalence of TCP traffic the Internet protocol suite is also known as TCP/IP.</p>
 </section>
   </div>
   <div class="slide hidden" id="slide-19">
-    <section class="slide-content"><h3 id="transport-layer-exercise">Transport Layer: Exercise</h3>
+    <section class="slide-content"><h3 id="transport-layer-examples">Transport Layer: Examples</h3>
+<p>TCP and UDP both introduce the concept of port numbers (0-65535) to identify sending and receiving application end-points on a host.</p>
+<p>Many applications have well known ports on the receiving end, eg. port 80 for web servers (HTTP).</p>
 </section>
   </div>
   <div class="slide hidden" id="slide-20">
+    <section class="slide-content"><h3 id="transport-layer-examples">Transport Layer: Examples</h3>
+<p>User Datagram Protocol (UDP) - used for simple, connectionless messaging transmissions</p>
+<ul>
+<li>Unreliable</li>
+<li>Unordered</li>
+<li>Lightweight, low latency</li>
+<li>Datagram (single packets)</li>
+</ul>
+<p><a href="https://en.wikipedia.org/wiki/User_Datagram_Protocol">https://en.wikipedia.org/wiki/User_Datagram_Protocol</a></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-21">
+    <section class="slide-content"><h3 id="transport-layer-exercise">Transport Layer: Exercise</h3>
+<p>Observe UDP communications, using special interface Loopback (lo0) with IP address 127.0.0.1</p>
+<ol>
+<li>Open Wireshark, capture packets on lo0, filter <code>udp.port == 64000</code></li>
+<li><code>netcat --udp --listen --local-port=64000</code> to listen for UDP datagrams on port 64000</li>
+<li><code>echo &#39;Hello, World&#39; | netcat --udp 127.0.0.1 64000</code> to send &quot;Hello, World&quot; datagram</li>
+</ol>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-22">
+    <section class="slide-content"><h3 id="transport-layer-examples">Transport Layer: Examples</h3>
+<p>Transmission Control Protocol (TCP) - connection oriented, bi-directional messaging</p>
+<ul>
+<li>Reliable</li>
+<li>Ordered</li>
+<li>Heavyweight</li>
+</ul>
+<p><a href="https://en.wikipedia.org/wiki/Transmission_Control_Protocol">https://en.wikipedia.org/wiki/Transmission_Control_Protocol</a></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-23">
+    <section class="slide-content"><h3 id="transport-layer-exercise">Transport Layer: Exercise</h3>
+<p>Observe TCP communications, using Loopback interface</p>
+<ol>
+<li>Open Wireshark, capture packets on lo0, filter <code>tcp.port == 64000</code></li>
+<li><code>netcat --tcp --listen --local-port=64000</code> to listen for TCP connections on port 64000</li>
+<li><code>echo &#39;Hello, World&#39; | netcat --tcp --close 127.0.0.1 64000</code> to send &quot;Hello, World&quot; message</li>
+</ol>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-24">
     <section class="slide-content"><h3 id="application-layer-diagram">Application Layer: Diagram</h3>
 <p><img src="ApplicationLayer.png" alt="Application Layer"></p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-21">
+  <div class="slide hidden" id="slide-25">
     <section class="slide-content"><h3 id="application-layer-definition">Application Layer: Definition</h3>
 <p>The <strong>application layer</strong> includes the protocols for providing user services or
 exchanging data over the network connections established by the lower level
@@ -565,7 +611,7 @@ use lower layer protocols to effect actual data transfer.</p>
 <p><a href="https://en.wikipedia.org/wiki/Internet_protocol_suite#Application_layer">https://en.wikipedia.org/wiki/Internet_protocol_suite#Application_layer</a></p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-22">
+  <div class="slide hidden" id="slide-26">
     <section class="slide-content"><h3 id="application-layer-examples">Application Layer: Examples</h3>
 <ul>
 <li>File Transmission Protocol (FTP)</li>
@@ -578,11 +624,11 @@ use lower layer protocols to effect actual data transfer.</p>
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-23">
+  <div class="slide hidden" id="slide-27">
     <section class="slide-content"><h3 id="application-layer-exercise">Application Layer: Exercise</h3>
 </section>
   </div>
-  <div class="slide hidden" id="slide-24">
+  <div class="slide hidden" id="slide-28">
     <section class="slide-content"><div class="author">
   <h1 class="name">Ben Wallberg, Peter Eichman</h1>
     <h3 class="email">

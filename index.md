@@ -159,7 +159,7 @@ possible tools: tracert
 
 ### Transport Layer: Definition
 
-The **transport layer** establishes a basic data channel between processes. It
+The **transport layer** establishes a basic data channel between hosts. It
 provides end-to-end services that are independent of the underlying network
 (link and internet layers).  These services are also independent of the
 structure of user data and the logistics of exchanging information for any
@@ -171,12 +171,64 @@ https://en.wikipedia.org/wiki/Internet_protocol_suite#Transport_layer
 
 ### Transport Layer: Examples
 
-* Transmission Control Protocol (TCP)
 * User Datagram Protocol (UDP)
+* Transmission Control Protocol (TCP)
+
+Both operate on top of the IP protocol.  Due to the prevalence of TCP traffic the Internet protocol suite is also known as TCP/IP.
+
+--
+
+### Transport Layer: Examples
+
+TCP and UDP both introduce the concept of port numbers (0-65535) to identify sending and receiving application end-points on a host.
+
+Many applications have well known ports on the receiving end, eg. port 80 for web servers (HTTP). 
+
+--
+
+### Transport Layer: Examples
+
+User Datagram Protocol (UDP) - used for simple, connectionless messaging transmissions
+
+* Unreliable
+* Unordered
+* Lightweight, low latency
+* Datagram (single packets)
+
+https://en.wikipedia.org/wiki/User_Datagram_Protocol
 
 --
 
 ### Transport Layer: Exercise
+
+Observe UDP communications, using special interface Loopback (lo0) with IP address 127.0.0.1
+
+1. Open Wireshark, capture packets on lo0, filter `udp.port == 64000`
+2. `netcat --udp --listen --local-port=64000` to listen for UDP datagrams on port 64000
+4. `echo 'Hello, World' | netcat --udp 127.0.0.1 64000` to send "Hello, World" datagram
+
+
+--
+
+### Transport Layer: Examples
+
+Transmission Control Protocol (TCP) - connection oriented, bi-directional messaging
+
+* Reliable
+* Ordered
+* Heavyweight
+
+https://en.wikipedia.org/wiki/Transmission_Control_Protocol
+
+--
+
+### Transport Layer: Exercise
+
+Observe TCP communications, using Loopback interface
+
+1. Open Wireshark, capture packets on lo0, filter `tcp.port == 64000`
+2. `netcat --tcp --listen --local-port=64000` to listen for TCP connections on port 64000
+4. `echo 'Hello, World' | netcat --tcp --close 127.0.0.1 64000` to send "Hello, World" message
 
 --
 

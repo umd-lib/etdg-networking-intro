@@ -86,9 +86,17 @@ Media Access Control (MAC) Address (e.g., `80:e6:50:25:0d:74`)
 
 --
 
-### Link Layer: Ethernet Packet
+### Link Layer: Exercise
 
-aka Ethernet Frame
+In this exercise, you will locate the MAC addresses for the WiFi NIC on your computer.
+
+1. Open a Terminal
+2. Type `ifconfig en0` at the prompt and press [Return]
+
+--
+
+### Link Layer: Ethernet Frame
+
 
 ![](800px-Ethernet_Type_II_Frame_format.svg.png)
 
@@ -100,10 +108,10 @@ aka Ethernet Frame
 
 ### Link Layer: Exercise
 
-In this exercise, you will locate the MAC addresses for the WiFi NIC on your computer.
+Observe Ethernet frames, with Source and Destination MAC addresses
 
-1. Open a Terminal
-2. Type `ifconfig en0` at the prompt and press [Return]
+1. Open Wireshark, capture packets on en0
+2. Inspect the Ethernet II elements
 
 --
 

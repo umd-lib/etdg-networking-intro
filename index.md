@@ -73,22 +73,22 @@ implemented on top of virtually any hardware networking technology.
 
 https://en.wikipedia.org/wiki/Internet_protocol_suite#Link_layer
 
-
 --
 
 ### Link Layer: Examples
 
-Physical media: Ethernet, WiFi, 4G, Phone Line
+Physical interconnection: Ethernet, Phone Line, Cable, WiFi, 4G cell signal
 
-Link: Network Interface Controller (NIC), Modem, Phone/Cell Antenna?
+Link endpoints: Network Interface Controller (NIC), Modem, Antenna
 
-Media Access Control (MAC) Address (e.g., `80:e6:50:25:0d:74`)
+Networked devices are identified at the link layer by their Media Access Control
+(MAC) Address (e.g., `80:e6:50:25:0d:74`)
 
 --
 
 ### Link Layer: Exercise
 
-In this exercise, you will locate the MAC addresses for the WiFi NIC on your computer.
+Locate the MAC addresses for the WiFi NIC on your computer.
 
 1. Open a Terminal
 2. Type `ifconfig en0` at the prompt and press [Return]
@@ -142,6 +142,17 @@ https://en.wikipedia.org/wiki/Internet_protocol_suite#Internet_layer
 * Network Address Translation (NAT)
 * Local Area Network (LAN)
 * Wide Area Network (WAN)
+
+--
+
+### Internet Layer: Internet Protocol
+
+The Internet Protocol (IP) is the principal communications protocol in the
+Internet protocol suite for relaying datagrams across network boundaries. Its
+routing function enables internetworking, and essentially establishes the
+Internet.
+
+https://en.wikipedia.org/wiki/Internet_Protocol
 
 --
 

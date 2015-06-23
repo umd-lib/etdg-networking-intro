@@ -132,6 +132,29 @@ https://en.wikipedia.org/wiki/Internet_protocol_suite#Internet_layer
 
 --
 
+### Internet Layer: Examples
+
+* Internet Protocol (IP)
+* IP address
+* Classless Inter-Domain Routing (CIDR)
+* Routing
+* Network Address Translation (NAT)
+* Local Area Network (LAN)
+* Wide Area Network (WAN)
+
+--
+
+### Internet Layer: IP Address
+
+A unique address for a computer on a network.
+
+* Version 4 (**IPv4**) example: `192.168.192.125`
+* ~4.3 billion possible addresses (4,294,967,296)
+* Version 6 (**IPv6**) example: `fe80:4::82e6:50ff`
+* ~3.4×10³⁸ possible addresses
+
+--
+
 ### Internet Layer: Routing
 
 Routers:
@@ -142,20 +165,18 @@ Routers:
 
 --
 
-### Internet Layer: Examples
-
-* Classless Inter-Domain Routing (CIDR)
-* Routing
-* Internet Protocol (IP)
-* Network Address Translation (NAT)
-* Local Area Network (LAN)
-* Wide Area Network (WAN)
-
---
-
 ### Internet Layer: Exercise
 
-possible tools: tracert
+Show where to go to connect to specific IP address: `route -n get www.lib.umd.edu`
+
+Follow the route to the destination: `traceroute -n www.lib.umd.edu`
+
+Show all routes in your local routing table: `netstat -r -n`
+
+Show networks and addresses for all interfaces: `netstat -i -n`
+
+(`-n` is a commonly-used switch that means "numeric"; in other words, don't try
+to translate IP addresses into hostnames)
 
 --
 

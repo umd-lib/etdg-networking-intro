@@ -232,7 +232,7 @@ https://en.wikipedia.org/wiki/User_Datagram_Protocol
 
 Observe UDP communications, using special interface Loopback (lo0) with IP address 127.0.0.1
 
-1. Open Wireshark, capture packets on lo0, filter `udp.port == 64000`
+1. Open Wireshark, capture packets on lo0, filter `udp.port eq 64000`
 2. `netcat --udp --listen --local-port=64000` to listen for UDP datagrams on port 64000
 4. `echo 'Hello, World' | netcat --udp 127.0.0.1 64000` to send "Hello, World" datagram
 
@@ -255,7 +255,7 @@ https://en.wikipedia.org/wiki/Transmission_Control_Protocol
 
 Observe TCP communications, using Loopback interface
 
-1. Open Wireshark, capture packets on lo0, filter `tcp.port == 64000`
+1. Open Wireshark, capture packets on lo0, filter `tcp.port eq 64000`
 2. `netcat --tcp --listen --local-port=64000` to listen for TCP connections on port 64000
 4. `echo 'Hello, World' | netcat --tcp --close 127.0.0.1 64000` to send "Hello, World" message
 

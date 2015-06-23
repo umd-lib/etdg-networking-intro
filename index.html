@@ -594,7 +594,7 @@ particular specific purpose (application layer).</p>
     <section class="slide-content"><h3 id="transport-layer-exercise">Transport Layer: Exercise</h3>
 <p>Observe UDP communications, using special interface Loopback (lo0) with IP address 127.0.0.1</p>
 <ol>
-<li>Open Wireshark, capture packets on lo0, filter <code>udp.port == 64000</code></li>
+<li>Open Wireshark, capture packets on lo0, filter <code>udp.port eq 64000</code></li>
 <li><code>netcat --udp --listen --local-port=64000</code> to listen for UDP datagrams on port 64000</li>
 <li><code>echo &#39;Hello, World&#39; | netcat --udp 127.0.0.1 64000</code> to send &quot;Hello, World&quot; datagram</li>
 </ol>
@@ -615,7 +615,7 @@ particular specific purpose (application layer).</p>
     <section class="slide-content"><h3 id="transport-layer-exercise">Transport Layer: Exercise</h3>
 <p>Observe TCP communications, using Loopback interface</p>
 <ol>
-<li>Open Wireshark, capture packets on lo0, filter <code>tcp.port == 64000</code></li>
+<li>Open Wireshark, capture packets on lo0, filter <code>tcp.port eq 64000</code></li>
 <li><code>netcat --tcp --listen --local-port=64000</code> to listen for TCP connections on port 64000</li>
 <li><code>echo &#39;Hello, World&#39; | netcat --tcp --close 127.0.0.1 64000</code> to send &quot;Hello, World&quot; message</li>
 </ol>

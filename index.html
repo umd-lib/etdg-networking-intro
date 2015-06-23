@@ -509,6 +509,7 @@ to the destination network. This process is called routing.</p>
 <ul>
 <li>Internet Protocol (IP)</li>
 <li>IP address</li>
+<li>Subnets</li>
 <li>Classless Inter-Domain Routing (CIDR)</li>
 <li>Routing</li>
 <li>Network Address Translation (NAT)</li>
@@ -522,38 +523,76 @@ to the destination network. This process is called routing.</p>
 <p>A unique address for a computer on a network.</p>
 <ul>
 <li>Version 4 (<strong>IPv4</strong>) example: <code>192.168.192.125</code></li>
-<li>~4.3 billion possible addresses (4,294,967,296)</li>
+<li>32 bits = 2³² = ~4.3 billion possible addresses</li>
 <li>Version 6 (<strong>IPv6</strong>) example: <code>fe80:4::82e6:50ff</code></li>
-<li>~3.4×10³⁸ possible addresses</li>
+<li>128 bits = 2¹²⁸ = ~3.4×10³⁸ possible addresses</li>
 </ul>
 </section>
   </div>
   <div class="slide hidden" id="slide-16">
-    <section class="slide-content"><h3 id="internet-layer-routing">Internet Layer: Routing</h3>
-<p>Routers:</p>
+    <section class="slide-content"><h3 id="internet-layer-subnets">Internet Layer: Subnets</h3>
+<p>A subnetwork, or subnet, is a logical, visible subdivision of an IP network.
+Computers that belong to a subnet are addressed with a common, identical, prefix
+in their IP address.</p>
 <ul>
-<li>Connect networks</li>
-<li>Packet for a computer on the local area network (LAN)? Deliver directly</li>
-<li>Packet for a remote computer? Send it to another router</li>
+<li>Address: 129.2.93.79</li>
+<li>Subnet prefix: 129.2.93</li>
+<li>Subnet mask: 255.255.250.0</li>
+<li>CIDR notation: 129.2.93.0/24</li>
 </ul>
+<p><a href="https://en.wikipedia.org/wiki/Subnetwork">https://en.wikipedia.org/wiki/Subnetwork</a></p>
 </section>
   </div>
   <div class="slide hidden" id="slide-17">
-    <section class="slide-content"><h3 id="internet-layer-exercise">Internet Layer: Exercise</h3>
-<p>Show where to go to connect to specific IP address: <code>route -n get www.lib.umd.edu</code></p>
-<p>Follow the route to the destination: <code>traceroute -n www.lib.umd.edu</code></p>
-<p>Show all routes in your local routing table: <code>netstat -r -n</code></p>
-<p>Show networks and addresses for all interfaces: <code>netstat -i -n</code></p>
-<p>(<code>-n</code> is a commonly-used switch that means &quot;numeric&quot;; in other words, don&#39;t try
-to translate IP addresses into hostnames)</p>
+    <section class="slide-content"><h3 id="internet-layer-subnets">Internet Layer: Subnets</h3>
+<p><img src="IPSettings.png" alt="IP Settings"></p>
 </section>
   </div>
   <div class="slide hidden" id="slide-18">
+    <section class="slide-content"><h3 id="internet-layer-exercise">Internet Layer: Exercise</h3>
+<p>Show subnets and IP addresses for all interfaces on your computer.</p>
+<ol>
+<li>Open a Terminal</li>
+<li>Type <code>netstat -i -n</code></li>
+</ol>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-19">
+    <section class="slide-content"><h3 id="internet-layer-routing">Internet Layer: Routing</h3>
+<p>Traffic is exchanged (routed) between subnetworks with special gateways
+(routers) when the routing prefixes of the source address and the destination
+address differ.</p>
+<p>Routers have a NIC for each network that they connect to, and a separate IP
+address assigned to each NIC. One IP is their &quot;public identity&quot;, visible to
+other networks, and the other is their &quot;private identity&quot;, visbile only to the
+devices that are on the local subnet.</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-20">
+    <section class="slide-content"><h3 id="internet-layer-exercise">Internet Layer: Exercise</h3>
+<p>Show what router to use to connect to specific IP address.</p>
+<ol>
+<li>Open a Terminal</li>
+<li>Type <code>route -n get www.lib.umd.edu -ifscope en0</code></li>
+</ol>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-21">
+    <section class="slide-content"><h3 id="internet-layer-exercise">Internet Layer: Exercise</h3>
+<p>Follow the route to the destination.</p>
+<ol>
+<li>Open a Terminal</li>
+<li>Type <code>traceroute -n -i en0 www.lib.umd.edu</code></li>
+<li>Type <code>traceroute -n -i en0 echodin.net</code></li>
+</ol>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-22">
     <section class="slide-content"><h3 id="transport-layer-diagram">Transport Layer: Diagram</h3>
 <p><img src="TransportLayer.png" alt="Transport Layer"></p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-19">
+  <div class="slide hidden" id="slide-23">
     <section class="slide-content"><h3 id="transport-layer-definition">Transport Layer: Definition</h3>
 <p>The <strong>transport layer</strong> establishes a basic data channel between hosts. It
 provides end-to-end services that are independent of the underlying network
@@ -563,7 +602,7 @@ particular specific purpose (application layer).</p>
 <p><a href="https://en.wikipedia.org/wiki/Internet_protocol_suite#Transport_layer">https://en.wikipedia.org/wiki/Internet_protocol_suite#Transport_layer</a></p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-20">
+  <div class="slide hidden" id="slide-24">
     <section class="slide-content"><h3 id="transport-layer-examples">Transport Layer: Examples</h3>
 <ul>
 <li>User Datagram Protocol (UDP)</li>
@@ -572,13 +611,13 @@ particular specific purpose (application layer).</p>
 <p>Both operate on top of the IP protocol.  Due to the prevalence of TCP traffic the Internet protocol suite is also known as TCP/IP.</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-21">
+  <div class="slide hidden" id="slide-25">
     <section class="slide-content"><h3 id="transport-layer-examples">Transport Layer: Examples</h3>
 <p>TCP and UDP both introduce the concept of port numbers (0-65535) to identify sending and receiving application end-points on a host.</p>
 <p>Many applications have well known ports on the receiving end, eg. port 80 for web servers (HTTP).</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-22">
+  <div class="slide hidden" id="slide-26">
     <section class="slide-content"><h3 id="transport-layer-examples">Transport Layer: Examples</h3>
 <p>User Datagram Protocol (UDP) - used for simple, connectionless messaging transmissions</p>
 <ul>
@@ -590,7 +629,7 @@ particular specific purpose (application layer).</p>
 <p><a href="https://en.wikipedia.org/wiki/User_Datagram_Protocol">https://en.wikipedia.org/wiki/User_Datagram_Protocol</a></p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-23">
+  <div class="slide hidden" id="slide-27">
     <section class="slide-content"><h3 id="transport-layer-exercise">Transport Layer: Exercise</h3>
 <p>Observe UDP communications, using special interface Loopback (lo0) with IP address 127.0.0.1</p>
 <ol>
@@ -600,7 +639,7 @@ particular specific purpose (application layer).</p>
 </ol>
 </section>
   </div>
-  <div class="slide hidden" id="slide-24">
+  <div class="slide hidden" id="slide-28">
     <section class="slide-content"><h3 id="transport-layer-examples">Transport Layer: Examples</h3>
 <p>Transmission Control Protocol (TCP) - connection oriented, bi-directional messaging</p>
 <ul>
@@ -611,7 +650,7 @@ particular specific purpose (application layer).</p>
 <p><a href="https://en.wikipedia.org/wiki/Transmission_Control_Protocol">https://en.wikipedia.org/wiki/Transmission_Control_Protocol</a></p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-25">
+  <div class="slide hidden" id="slide-29">
     <section class="slide-content"><h3 id="transport-layer-exercise">Transport Layer: Exercise</h3>
 <p>Observe TCP communications, using Loopback interface</p>
 <ol>
@@ -621,12 +660,12 @@ particular specific purpose (application layer).</p>
 </ol>
 </section>
   </div>
-  <div class="slide hidden" id="slide-26">
+  <div class="slide hidden" id="slide-30">
     <section class="slide-content"><h3 id="application-layer-diagram">Application Layer: Diagram</h3>
 <p><img src="ApplicationLayer.png" alt="Application Layer"></p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-27">
+  <div class="slide hidden" id="slide-31">
     <section class="slide-content"><h3 id="application-layer-definition">Application Layer: Definition</h3>
 <p>The <strong>application layer</strong> includes the protocols for providing user services or
 exchanging data over the network connections established by the lower level
@@ -636,19 +675,19 @@ use lower layer protocols to effect actual data transfer.</p>
 <p><a href="https://en.wikipedia.org/wiki/Internet_protocol_suite#Application_layer">https://en.wikipedia.org/wiki/Internet_protocol_suite#Application_layer</a></p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-28">
+  <div class="slide hidden" id="slide-32">
     <section class="slide-content"><h3 id="application-layer-examples">Application Layer: Examples</h3>
 <p>Domain Name System (DNS)</p>
 <p>The Domain Name System is an essential component of the functionality of most Internet services because it is the Internet&#39;s primary directory service, translating domain names, which can be easily memorized by humans, to IP addresses.</p>
 <p><a href="https://en.wikipedia.org/wiki/Domain_Name_System">https://en.wikipedia.org/wiki/Domain_Name_System</a></p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-29">
+  <div class="slide hidden" id="slide-33">
     <section class="slide-content"><h3 id="application-layer-examples">Application Layer: Examples</h3>
 <p><img src="DNS_Configuration.png" alt="DNS Configuration"></p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-30">
+  <div class="slide hidden" id="slide-34">
     <section class="slide-content"><h3 id="application-layer-exercise">Application Layer: Exercise</h3>
 <p>Observe DNS communications.</p>
 <ol>
@@ -660,14 +699,14 @@ use lower layer protocols to effect actual data transfer.</p>
 </ol>
 </section>
   </div>
-  <div class="slide hidden" id="slide-31">
+  <div class="slide hidden" id="slide-35">
     <section class="slide-content"><h3 id="application-layer-examples">Application Layer: Examples</h3>
 <p>Hypertext Transfer Protocol (HTTP)</p>
 <p>An application protocol for distributed, collaborative, hypermedia information systems; the foundation of data communication for the World Wide Web.</p>
 <p><a href="https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol">https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol</a></p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-32">
+  <div class="slide hidden" id="slide-36">
     <section class="slide-content"><h3 id="application-layer-examples">Application Layer: Examples</h3>
 <p>HTTP Client Request</p>
 <p>Requesting <a href="http://www.example.com/index.html">http://www.example.com/index.html</a></p>
@@ -675,7 +714,7 @@ use lower layer protocols to effect actual data transfer.</p>
 Host: www.example.com</code></pre>
 </section>
   </div>
-  <div class="slide hidden" id="slide-33">
+  <div class="slide hidden" id="slide-37">
     <section class="slide-content"><h3 id="application-layer-examples">Application Layer: Examples</h3>
 <p>HTTP Server Response:</p>
 <pre><code>HTTP/1.1 200 OK
@@ -698,7 +737,7 @@ Connection: close
 &lt;/html&gt;</code></pre>
 </section>
   </div>
-  <div class="slide hidden" id="slide-34">
+  <div class="slide hidden" id="slide-38">
     <section class="slide-content"><h3 id="application-layer-exercise">Application Layer: Exercise</h3>
 <p>Requesting <a href="http://lib.umd.edu/">http://lib.umd.edu/</a></p>
 <p>Open Wireshark, capture packets on en0, filter <code>ip.addr eq 129.2.19.172 and tcp.port eq 80</code></p>
@@ -709,7 +748,7 @@ Host: lib.umd.edu
 Ctrl-D</code></pre>
 </section>
   </div>
-  <div class="slide hidden" id="slide-35">
+  <div class="slide hidden" id="slide-39">
     <section class="slide-content"><h3 id="application-layer-exercise">Application Layer: Exercise</h3>
 <p>Requesting <a href="http://www.lib.umd.edu/">http://www.lib.umd.edu/</a></p>
 <pre><code>telnet www.lib.umd.edu
@@ -719,13 +758,13 @@ Host: lib.umd.edu
 Ctrl-D</code></pre>
 </section>
   </div>
-  <div class="slide hidden" id="slide-36">
+  <div class="slide hidden" id="slide-40">
     <section class="slide-content"><h3 id="application-layer-exercise">Application Layer: Exercise</h3>
 <p><em>curl</em> is a command-line tool to transfer data from or to a server, using one of the supported protocols (HTTP, etc.).  The command is designed to work without user interaction.</p>
 <p><code>curl http://lib.umd.edu</code></p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-37">
+  <div class="slide hidden" id="slide-41">
     <section class="slide-content"><h3 id="application-layer-exercise">Application Layer: Exercise</h3>
 <p>Web development tools for inspection and debugging of web pages.</p>
 <ul>
@@ -734,21 +773,21 @@ Ctrl-D</code></pre>
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-38">
+  <div class="slide hidden" id="slide-42">
     <section class="slide-content"><h3 id="application-layer-examples">Application Layer: Examples</h3>
 <p>HTTP Secure (HTTPS)</p>
 <p>HTTP communication within a connection encrypted by Transport Layer Security (TLS), et al. The main motivation for HTTPS is authentication of the visited website and to protect the privacy and integrity of the exchanged data.</p>
 <p><a href="https://en.wikipedia.org/wiki/HTTPS">https://en.wikipedia.org/wiki/HTTPS</a></p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-39">
+  <div class="slide hidden" id="slide-43">
     <section class="slide-content"><h3 id="application-layer-exercise">Application Layer: Exercise</h3>
 <p>Requesting <a href="https://mdsoar.org/">https://mdsoar.org/</a></p>
 <p>Open Wireshark, capture packets on en0, filter <code>ip.addr eq 129.2.19.141 and tcp.port eq 443</code></p>
 <p><code>curl https://mdsoar.org/</code></p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-40">
+  <div class="slide hidden" id="slide-44">
     <section class="slide-content"><h3 id="application-layer-examples">Application Layer: Examples</h3>
 <p>Addtional examples:</p>
 <ul>
@@ -758,7 +797,7 @@ Ctrl-D</code></pre>
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-41">
+  <div class="slide hidden" id="slide-45">
     <section class="slide-content"><div class="author">
   <h1 class="name">Ben Wallberg, Peter Eichman</h1>
     <h3 class="email">

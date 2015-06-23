@@ -136,6 +136,7 @@ https://en.wikipedia.org/wiki/Internet_protocol_suite#Internet_layer
 
 * Internet Protocol (IP)
 * IP address
+* Subnets
 * Classless Inter-Domain Routing (CIDR)
 * Routing
 * Network Address Translation (NAT)
@@ -149,34 +150,71 @@ https://en.wikipedia.org/wiki/Internet_protocol_suite#Internet_layer
 A unique address for a computer on a network.
 
 * Version 4 (**IPv4**) example: `192.168.192.125`
-* ~4.3 billion possible addresses (4,294,967,296)
+* 32 bits = 2³² = ~4.3 billion possible addresses
 * Version 6 (**IPv6**) example: `fe80:4::82e6:50ff`
-* ~3.4×10³⁸ possible addresses
+* 128 bits = 2¹²⁸ = ~3.4×10³⁸ possible addresses
 
 --
 
-### Internet Layer: Routing
+### Internet Layer: Subnets
 
-Routers:
+A subnetwork, or subnet, is a logical, visible subdivision of an IP network.
+Computers that belong to a subnet are addressed with a common, identical, prefix
+in their IP address.
 
-* Connect networks
-* Packet for a computer on the local area network (LAN)? Deliver directly
-* Packet for a remote computer? Send it to another router
+* Address: 129.2.93.79
+* Subnet prefix: 129.2.93
+* Subnet mask: 255.255.250.0
+* CIDR notation: 129.2.93.0/24
+
+https://en.wikipedia.org/wiki/Subnetwork
+
+--
+
+### Internet Layer: Subnets
+
+![IP Settings](IPSettings.png)
 
 --
 
 ### Internet Layer: Exercise
 
-Show where to go to connect to specific IP address: `route -n get www.lib.umd.edu`
+Show subnets and IP addresses for all interfaces on your computer.
 
-Follow the route to the destination: `traceroute -n www.lib.umd.edu`
+1. Open a Terminal
+2. Type `netstat -i -n`
 
-Show all routes in your local routing table: `netstat -r -n`
+--
 
-Show networks and addresses for all interfaces: `netstat -i -n`
+### Internet Layer: Routing
 
-(`-n` is a commonly-used switch that means "numeric"; in other words, don't try
-to translate IP addresses into hostnames)
+Traffic is exchanged (routed) between subnetworks with special gateways
+(routers) when the routing prefixes of the source address and the destination
+address differ.
+
+Routers have a NIC for each network that they connect to, and a separate IP
+address assigned to each NIC. One IP is their "public identity", visible to
+other networks, and the other is their "private identity", visbile only to the
+devices that are on the local subnet.
+
+--
+
+### Internet Layer: Exercise
+
+Show what router to use to connect to specific IP address.
+
+1. Open a Terminal
+2. Type `route -n get www.lib.umd.edu -ifscope en0`
+
+--
+
+### Internet Layer: Exercise
+
+Follow the route to the destination.
+
+1. Open a Terminal
+2. Type `traceroute -n -i en0 www.lib.umd.edu`
+3. Type `traceroute -n -i en0 echodin.net`
 
 --
 

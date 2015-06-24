@@ -175,7 +175,7 @@ in their IP address.
 
 * Address: 129.2.93.79
 * Subnet prefix: 129.2.93
-* Subnet mask: 255.255.250.0
+* Subnet mask: 255.255.255.0
 * CIDR notation: 129.2.93.0/24
 
 https://en.wikipedia.org/wiki/Subnetwork
